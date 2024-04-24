@@ -17,23 +17,21 @@ namespace TinyWidgetLibrary
 	constexpr static int RIPPLE_WIDGET_EXTEND = -8;
 
 	// 波纹效果的显示类
+	// 该类的是在其它控件的前面加一个透明窗口来显示波纹
 	class Overlay : public QWidget
 	{
 		Q_OBJECT
 
 	public:
 
-		explicit		 Overlay(QWidget *parent = nullptr);
-
-		virtual 		~Overlay();
-
-		// 添加波纹
-		void			addRipple(Ripple* ripple);
-
-		// 移除波纹
-		void			removeRipple(Ripple* ripple);
-
-		void			setClipPath(const QPainterPath& clipPath);
+		explicit	Overlay(QWidget *parent = nullptr);
+		virtual 	~Overlay();
+		
+		void		addRipple(Ripple* ripple);	// 添加波纹
+		
+		void		removeRipple(Ripple* ripple);	// 移除波纹
+		
+		void		setClipPath(const QPainterPath& clipPath);	// 设置波纹的显示的方式
 
 	protected:
 
@@ -52,6 +50,7 @@ namespace TinyWidgetLibrary
 
 		QPainterPath	m_clipPath;
 
+		// 该控件会根据以下波纹的集合绘画所有波纹
 		QList<Ripple*>	m_ripples;
 
 	};

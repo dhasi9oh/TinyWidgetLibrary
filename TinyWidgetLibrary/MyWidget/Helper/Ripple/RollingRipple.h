@@ -12,6 +12,8 @@
 
 namespace TinyWidgetLibrary
 {
+
+	//该波纹是用在方框按钮上的波纹
 	class RollingRipple : public Ripple
 	{
 		Q_OBJECT
@@ -37,9 +39,10 @@ namespace TinyWidgetLibrary
 
 		void			setScaleAnimationStartValue(qreal value);
 		void			setScaleAnimationEndValue(qreal value);
-
-		void			setOpacityAnimationStartValue(qreal value);
-		void			setOpacityAnimationEndValue(qreal value);
+						
+		//透明度范围（0~1.0）
+		void			setOpacityAnimationStartValue(qreal value);	//波纹开始时的透明度
+		void			setOpacityAnimationEndValue(qreal value);	//波纹结束时的透明度
 
 		virtual void	paintRipple(QPainter* painter) Q_DECL_OVERRIDE;
 

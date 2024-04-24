@@ -15,6 +15,8 @@
 
 namespace TinyWidgetLibrary
 {
+
+	//sliderÖĞµÄ»¬¿éÀà
 	class SliderWidget : public QWidget
 	{
 		Q_OBJECT

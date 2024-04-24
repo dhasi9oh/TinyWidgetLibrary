@@ -13,7 +13,7 @@
 
 namespace  TinyWidgetLibrary
 {
-
+	//该波纹是用在可选按钮上的波纹
 	class RoundRipple : public Ripple
     {
 		Q_OBJECT

@@ -48,7 +48,7 @@ namespace TinyWidgetLibrary
 	void RollingRipple::setOpacity(qreal opacity)
 	{
 		Q_ASSERT(m_overlay != nullptr);
-		if (opacity == m_opacity) return;
+		if (fabs(m_opacity - opacity) < 0.00001) return;
 
 		m_opacity = opacity;
 		m_overlay->update();
@@ -100,8 +100,6 @@ namespace TinyWidgetLibrary
 		setScaleAnimationEndValue(2);
 		setOpacityAnimationStartValue(0.5);
 		setOpacityAnimationEndValue(0);
-
-		connect(this, &QAbstractAnimation::finished, this, &Ripple::destroy);
 	}
 
 	void RollingRipple::paintRipple(QPainter *painter)

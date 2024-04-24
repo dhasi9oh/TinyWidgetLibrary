@@ -36,6 +36,9 @@ namespace TinyWidgetLibrary
 			m_startState->assignProperty(this, "window_size", QSize(0, size.height()));
 			m_endState->assignProperty(this, "window_size", QSize(0, size.height()));
 		}
+
+		m_stateMachine->start();
+		QCoreApplication::processEvents();
 	}
 
 	void FloatWindow::addWidget(QWidget *widget)
@@ -86,9 +89,6 @@ namespace TinyWidgetLibrary
 		m_startState->assignProperty(this, "window_size", QSize(0, 0));
 		m_middleState->assignProperty(this, "window_size", QSize(0, 0));
 		m_endState->assignProperty(this, "window_size", QSize(0, 0));
-
-		m_stateMachine->start();
-		QCoreApplication::processEvents();
 	}
 
 } // TinyWidgetLibrary

@@ -10,6 +10,8 @@
 
 namespace TinyWidgetLibrary
 {
+	//该类的责任时将显示波纹的控件放在当前控件的前边
+
 	class OverlayAbstractButton : public QAbstractButton
     {
     public:

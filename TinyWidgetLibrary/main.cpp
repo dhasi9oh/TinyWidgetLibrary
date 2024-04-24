@@ -22,6 +22,5 @@ int main(int argc, char *argv[])
 	QApplication a(argc, argv);
 	auto ptr = new TinyWidgetLibrary::MessageBoxHint;
 	ptr->show();
-	emit ptr->readyShow();
     return a.exec();
 }

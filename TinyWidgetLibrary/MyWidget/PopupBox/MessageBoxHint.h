@@ -56,7 +56,6 @@ namespace TinyWidgetLibrary
 		void			setY(qint32 y);
 
 		void			setText(const QString& text);
-
 		virtual QSize	sizeHint() const Q_DECL_OVERRIDE;
 
 	protected:
@@ -68,7 +67,6 @@ namespace TinyWidgetLibrary
 	private:
 
 		void			init();
-
 		void			updateStartPos();
 
 	private slots:

@@ -31,6 +31,7 @@ namespace TinyWidgetLibrary
 
 		ripple->start();
 
+		// 在波纹触发该信号时先停止再删除
 		connect(this, &QObject::destroyed, ripple, &Ripple::stop);
 		connect(this, &QObject::destroyed, ripple, &Ripple::deleteLater);
 	}
@@ -96,8 +97,9 @@ namespace TinyWidgetLibrary
 		painter.setPen(Qt::NoPen);
 		painter.setRenderHint(QPainter::Antialiasing);
 
-		bool use;
+		bool use; //判断当前波纹是否使用波纹显示路径
 
+		//遍历每个波纹并绘画
 		for (auto ripple : m_ripples) {
 			use = ripple->getUseClipPath();
 			if (use) {

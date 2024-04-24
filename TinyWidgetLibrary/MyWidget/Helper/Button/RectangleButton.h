@@ -9,6 +9,11 @@
 
 namespace TinyWidgetLibrary
 {
+
+	// 该类是一个标准的按钮类，主要负责方框的按钮
+	// 向下开放绘画接口：
+	// paintWidget
+
 	class RectangleButton : public OverlayAbstractButton
 	{
 		Q_OBJECT
@@ -17,29 +22,29 @@ namespace TinyWidgetLibrary
 
 	public:
 
-		explicit 			RectangleButton(QWidget *parent = nullptr);
-		virtual 			~RectangleButton();
+		explicit RectangleButton(QWidget *parent = nullptr);
+		virtual ~RectangleButton();
 
-		void				setTextColor(const QColor &color);
-		QColor              getTextColor() const;
+		void	setTextColor(const QColor &color);	//设置文本颜色
+		QColor  getTextColor() const;				//获取文本颜色
 
-		void 				setUnEnabledTextColor(const QColor &color);
-		QColor              getUnEnabledTextColor() const;
+		void 	setUnEnabledTextColor(const QColor &color); //设置按钮不可点击颜色
+		QColor  getUnEnabledTextColor() const;				//获取按钮不可点击颜色
 
-		void				setFrameColor(const QColor &color);
-		QColor              getFrameColor() const;
+		void	setFrameColor(const QColor &color);	//设置按钮框颜色
+		QColor  getFrameColor() const;				//获取按钮框颜色
 
-		void 				setHoverColor(const QColor &color);
-		QColor              getHoverColor() const;
+		void 	setHoverColor(const QColor &color);	//设置鼠标悬空在按钮上的背景色
+		QColor  getHoverColor() const;				//获取鼠标悬空在按钮上的背景色
 
-		void				setBackgroundColor(const QColor &color);
-		QColor              getBackgroundColor() const;
+		void	setBackgroundColor(const QColor &color);//设置按钮背景色
+		QColor  getBackgroundColor() const;				//获取按钮背景色
 
-		void				setDisableBackgroundColor(const QColor &color);
-		QColor              getDisableBackgroundColor() const;
+		void	setDisableBackgroundColor(const QColor &color); //设置按钮失效时的背景颜色
+		QColor  getDisableBackgroundColor() const;				//获取按钮失效时的背景颜色
 
-		void 				setTriggerColor(const QColor &color);
-		QColor              getTriggerColor() const;
+		void 	setTriggerColor(const QColor &color);	//设置按钮触发时的颜色
+		QColor  getTriggerColor() const;				//获取按钮触发时的颜色
 
 		virtual QRectF		getWidgetRect() const;
 		virtual QMargins 	getMargins() const;
