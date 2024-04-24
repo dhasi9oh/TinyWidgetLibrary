@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>img/guanbi.png</file>
+        <file>img/guanbi_.png</file>
+    </qresource>
+</RCC>
