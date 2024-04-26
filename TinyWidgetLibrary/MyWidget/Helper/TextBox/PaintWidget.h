@@ -5,13 +5,14 @@
 #ifndef TINYWIDGETLIBRARY_PAINTWIDGET_H
 #define TINYWIDGETLIBRARY_PAINTWIDGET_H
 
+#include <qstate.h>
 #include <qevent.h>
 #include <qwidget.h>
 #include <qlayout.h>
 #include <qpainter.h>
-#include <qstate.h>
 #include <qapplication.h>
 #include <qstatemachine.h>
+#include <qsharedpointer.h>
 #include <qeventtransition.h>
 #include <qpropertyanimation.h>
 
@@ -77,8 +78,10 @@ namespace TinyWidgetLibrary
 	protected:
 
 		// 装在div里的控件
+		using PaintPointer = QSharedPointer<Paint>;
+
 		qreal			m_scale;
-		Paint			*m_paint;
+		PaintPointer	m_paint;
 		QWidget			*m_target;
 		QStateMachine	*m_stateMachine;
 		QState			*m_startState;

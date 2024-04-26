@@ -23,9 +23,9 @@ qt_add_library(TinyWidgetLibrary STATIC
         #resource.qrc
 )
 
-
 target_include_directories(TinyWidgetLibrary PUBLIC
         "${PROJECT_SOURCE_DIR}/MyWidget"
+        "${PROJECT_SOURCE_DIR}/example"
 )
 
 target_link_libraries(TinyWidgetLibrary PUBLIC
@@ -41,17 +41,17 @@ target_link_directories(test PUBLIC ${CMAKE_SOURCE_DIR}/MyWidget)
 
 target_link_libraries(test PUBLIC TinyWidgetLibrary)
 
-#if(${QT_VERSION} VERSION_LESS 6.1.0)
-#  set(BUNDLE_ID_OPTION MACOSX_BUNDLE_GUI_IDENTIFIER com.example.test)
-#endif()
+if(${QT_VERSION} VERSION_LESS 6.1.0)
+  set(BUNDLE_ID_OPTION MACOSX_BUNDLE_GUI_IDENTIFIER com.example.test)
+endif()
 
-#set_target_properties(test PROPERTIES
-#    ${BUNDLE_ID_OPTION}
-#    MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
-#    MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
-#    MACOSX_BUNDLE TRUE
-#    WIN32_EXECUTABLE TRUE
-#)
+set_target_properties(test PROPERTIES
+    ${BUNDLE_ID_OPTION}
+    MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
+    MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
+    MACOSX_BUNDLE TRUE
+    WIN32_EXECUTABLE TRUE
+)
 
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(test)

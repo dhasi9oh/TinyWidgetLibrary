@@ -211,7 +211,7 @@ namespace TinyWidgetLibrary
 		setLayout(layout);
 		setAttribute(Qt::WA_Hover);
 		setDirection(Direction::LeftToRight);
-		setWindowFlag(Qt::FramelessWindowHint);
+		//setWindowFlag(Qt::FramelessWindowHint);
 
 		layout->setContentsMargins(0, 0, 0, 0);
 		layout->setSpacing(0);

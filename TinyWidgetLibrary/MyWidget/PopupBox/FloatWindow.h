@@ -34,7 +34,8 @@ namespace TinyWidgetLibrary
 		virtual 	~FloatWindow();
 		void		setShowSize(QSize size);
 		void		setWindowSize(QSize size);
-		void		addWidget(QWidget *widget); //该函数只能调用一次
+		//该函数只能调用一次
+		void		addWidget(QWidget *widget);
 
 	private:
 

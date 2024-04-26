@@ -1,4 +1,4 @@
-//
+
 // Created by 86186 on 2024/2/7.
 //
 #include "Helper/Button/RectangleButton.h"
@@ -20,11 +20,11 @@ namespace TinyWidgetLibrary
 		m_textColor					= QColorConstants::White;
 		m_unEnbledTextColor 		= QColor(150, 150, 150);
 		m_frameColor				= QColor(0, 102, 180);
-		m_hoverColor				= QColor(236, 236, 236);
+		m_hoverColor				= QColor(0, 90, 150);
 		m_backgroundColor			= QColor(0, 102, 180);
 		m_backupBackgroundColor		= QColor(0, 102, 180);
 		m_disableBackgroundColor	= QColor(165, 165, 165);
-		m_triggerColor				= QColor(0, 102, 180);
+		m_pressColor				= QColor(10, 110, 180);
 	}
 
 	void RectangleButton::setTextColor(const QColor &color)
@@ -87,14 +87,14 @@ namespace TinyWidgetLibrary
 		return m_disableBackgroundColor;
 	}
 
-	void RectangleButton::setTriggerColor(const QColor &color)
+	void RectangleButton::setPressBackgroundColor(const QColor& color)
 	{
-		m_triggerColor = color;
+		m_pressColor = color;
 	}
 
-	QColor RectangleButton::getTriggerColor() const
+	QColor RectangleButton::getPressBackgroundColor() const
 	{
-		return m_triggerColor;
+		return m_pressColor;
 	}
 
 	QRectF RectangleButton::getWidgetRect() const
@@ -120,6 +120,20 @@ namespace TinyWidgetLibrary
 			}
 			case QEvent::HoverLeave: {
 				if (isEnabled()) {
+					m_backgroundColor = m_backupBackgroundColor;
+					update();
+				}
+				break;
+			}
+			case QEvent::MouseButtonPress: {
+				if (isEnabled() && dynamic_cast<QMouseEvent*>(event)->button() == Qt::LeftButton) {
+					m_backgroundColor = m_pressColor;
+					update();
+				}
+				break;
+			}
+			case QEvent::MouseButtonRelease: {
+				if (isEnabled() && dynamic_cast<QMouseEvent*>(event)->button() == Qt::LeftButton) {
 					m_backgroundColor = m_backupBackgroundColor;
 					update();
 				}

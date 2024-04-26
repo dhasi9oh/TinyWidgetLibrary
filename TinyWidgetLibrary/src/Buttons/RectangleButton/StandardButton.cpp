@@ -46,7 +46,7 @@ namespace TinyWidgetLibrary
 	void StandardButton::paintWidget(QPainter *painter, const QRectF &rect_f)
 	{
 		painter->setPen(QPen(m_frameColor, 1));
-		painter->setBrush(m_triggerColor);
+		painter->setBrush(m_backgroundColor);
 		painter->drawRoundedRect(rect_f, RECT_ANGLE_RADIUS, RECT_ANGLE_RADIUS);
 	}
 

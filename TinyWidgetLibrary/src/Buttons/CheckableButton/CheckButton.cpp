@@ -116,13 +116,10 @@ namespace TinyWidgetLibrary
 				height() * 0.5 - RIPPLE_WIDGET_EXTEND
 				);
 
-		qDebug() << mapToGlobal(QPointF(0, 0)) << m_overlay->mapToGlobal(QPointF(0, 0));
-		qDebug() << size() << m_overlay->size();
-
 		RoundRipple* ripple = new RoundRipple(pos);
 
 		ripple->setOverlay(m_overlay);
-		ripple->setColor(isChecked() ? m_checkRippleColor : m_uncheckRippleColor);
+		ripple->setColor(isChecked() ? m_uncheckRippleColor : m_checkRippleColor);
 		ripple->setRadiusAnimationEndValue(18);
 		ripple->setOpacityAnimationStartValue(0.8);
 

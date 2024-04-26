@@ -42,9 +42,7 @@ namespace TinyWidgetLibrary
 
 	void PaintWidget::setPaint(Paint *paint)
 	{
-		if (m_paint != nullptr) m_paint->deleteLater();
-
-		m_paint = paint;
+		m_paint.reset(paint);
 		m_paint->setSource(this);
 		m_paint->setParent(this);
 		update();
@@ -141,9 +139,9 @@ namespace TinyWidgetLibrary
 		m_startState	= new QState;
 		m_endState		= new QState;
 		m_stateMachine 	= new QStateMachine(this);
-		m_paint			= new RisePaint(this, this);
 		m_focusInColor	= Qt::white;
 		m_focusOutColor	= QColor(0, 102, 180);
+		m_paint			= QSharedPointer<RisePaint>(new RisePaint(this, this));
 
 		m_stateMachine->addState(m_startState);
 		m_stateMachine->addState(m_endState);

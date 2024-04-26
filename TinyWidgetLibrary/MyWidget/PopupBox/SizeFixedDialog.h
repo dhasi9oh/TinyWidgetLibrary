@@ -28,7 +28,6 @@ namespace TinyWidgetLibrary
 	signals:
 
 		void showTarget();
-
 		void hideTarget();
 
 	public:
@@ -47,7 +46,6 @@ namespace TinyWidgetLibrary
 	protected slots:
 
 		void shown();
-
 		void hidden();
 
 	protected:

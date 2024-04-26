@@ -43,8 +43,8 @@ namespace TinyWidgetLibrary
 		void	setDisableBackgroundColor(const QColor &color); //设置按钮失效时的背景颜色
 		QColor  getDisableBackgroundColor() const;				//获取按钮失效时的背景颜色
 
-		void 	setTriggerColor(const QColor &color);	//设置按钮触发时的颜色
-		QColor  getTriggerColor() const;				//获取按钮触发时的颜色
+		void 	setPressBackgroundColor(const QColor &color);	//设置按钮触发时的颜色
+		QColor  getPressBackgroundColor() const;				//获取按钮触发时的颜色
 
 		virtual QRectF		getWidgetRect() const;
 		virtual QMargins 	getMargins() const;
@@ -70,7 +70,7 @@ namespace TinyWidgetLibrary
 		QColor				m_backgroundColor;
 		QColor				m_backupBackgroundColor;
 		QColor				m_disableBackgroundColor;
-		QColor				m_triggerColor;
+		QColor				m_pressColor;
 
 	};
 

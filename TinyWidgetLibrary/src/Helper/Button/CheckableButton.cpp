@@ -73,6 +73,7 @@ namespace TinyWidgetLibrary
 	void CheckableButton::setCheckedColor(const QColor &color)
 	{
 		m_checkedColor = color;
+		m_triggerColor = color;
 		update();
 	}
 
